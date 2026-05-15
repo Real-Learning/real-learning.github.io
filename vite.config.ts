@@ -1,16 +1,24 @@
-// vite.config.ts
 import { defineConfig } from 'vite';
 import injectHTML from 'vite-plugin-html-inject';
+import { resolve } from 'path';
 
 export default defineConfig({
   base: '/',
 
   plugins: [
-    injectHTML(), // to import other html files into index.html
+    injectHTML(),
   ],
 
   build: {
-    outDir: 'dist', // for GitHub Pages
+    outDir: 'dist',
     manifest: true,
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html'),
+        about: resolve(__dirname, 'about.html'),
+        faq: resolve(__dirname, 'faq.html'),
+        careers: resolve(__dirname, 'careers.html'),
+      },
+    },
   },
 });

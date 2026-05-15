@@ -1,11 +1,26 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>real-learning.github.io</title>
+    <load src="src/components/head.html" />
   </head>
   <body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <header id="site-header">
+      <load src="src/components/header.html" />
+    </header>
+
+    <main id="main">
+      <load src="src/sections/hero.html" />
+      <load src="src/sections/facts.html" />
+      <load src="src/sections/cta-whop.html" />
+      <load src="src/sections/contact.html" />
+    </main>
+
+    <footer id="site-footer">
+      <load src="src/components/footer.html" />
+    </footer>
+
+    <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

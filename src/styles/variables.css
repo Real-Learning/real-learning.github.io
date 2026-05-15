@@ -1,0 +1,24 @@
+:root {
+  /* Layout */
+  --content-max-width: 1200px;
+  --header-height: 64px;
+  --section-padding: 4rem 1rem;
+
+  /* Fact Section Offsets */
+  --fact-offset: 20%;
+
+  /* Colors (WCAG AA Compliant contrast targets) */
+  --color-bg: #ffffff;
+  --color-text: #1a1a1a;
+  --color-primary: #0056b3; /* High contrast blue */
+  --color-primary-hover: #004494;
+  --color-secondary: #f4f4f4;
+  --color-border: #dddddd;
+  --color-header-bg: #191724;
+  --color-header-text: #ffffff;
+  --color-hero-bg: rgba(255, 255, 255, 0.9);
+
+  /* Typography */
+  --font-main: system-ui, -apple-system, sans-serif;
+  --line-height: 1.6;
+}

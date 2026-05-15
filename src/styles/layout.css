@@ -1,0 +1,52 @@
+/* Accessibility Resets & Base Layout */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-main);
+  line-height: var(--line-height);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height);
+}
+
+/* Skip to Content Link */
+.skip-link {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  background: var(--color-primary);
+  color: white;
+  padding: 8px;
+  z-index: 1000;
+  transition: top 0.2s;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Main Layout Logic */
+.width-limiter {
+  max-width: var(--content-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Full-width sections with centered content */
+section {
+  width: 100%;
+  padding: var(--section-padding);
+}
+
+/* Focus Indicators */
+:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+}

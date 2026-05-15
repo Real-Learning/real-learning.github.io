@@ -1,0 +1,129 @@
+/* Hero Section */
+.hero {
+  position: relative;
+  height: calc(100dvh - 100px); /* Peek-ahead at next section */
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 0;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.hero-content {
+  width: 100%;
+  padding: 2rem;
+  z-index: 1;
+}
+
+.hero-text {
+  max-width: 600px;
+  background: var(--color-hero-bg);
+  color: var(--color-text);
+  padding: 2.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.hero-text h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+/* Fact Slivers */
+.facts-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 0rem 0;
+}
+
+.fact-sliver {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  background: var(--color-secondary);
+  border-radius: 12px;
+  width: 100%;
+}
+
+.fact-sliver:nth-child(even) {
+  margin-left: var(--fact-offset);
+  width: calc(100% - var(--fact-offset));
+}
+
+.fact-sliver:nth-child(odd) {
+  margin-right: var(--fact-offset);
+  width: calc(100% - var(--fact-offset));
+}
+
+@media (max-width: 768px) {
+  .fact-sliver:nth-child(even),
+  .fact-sliver:nth-child(odd) {
+    margin: 0;
+    width: 100%;
+  }
+}
+
+.fact-icon {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  background: var(--color-primary);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.fact-content h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Contact Section */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--color-text);
+  transition: all 0.2s;
+}
+
+.contact-card:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.contact-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
