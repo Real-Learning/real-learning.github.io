@@ -16,7 +16,7 @@
   --color-border: #dddddd;
   --color-header-bg: #191724;
   --color-header-text: #ffffff;
-  --color-hero-bg: rgba(255, 255, 255, 0.9);
+  --color-hero-text-bg: rgba(255, 255, 255, 0.9);
 
   /* Typography */
   --font-main: system-ui, -apple-system, sans-serif;
