@@ -1,7 +1,9 @@
 /* Hero Section */
 .hero {
   position: relative;
+  width: 100vw;
   height: calc(100dvh - 100px); /* Peek-ahead at next section */
+  container-type: size;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -16,6 +18,17 @@
   height: 100%;
   object-fit: cover;
   z-index: -1;
+}
+
+@supports(object-position: 50cqi) {
+  .hero-bg {
+    object-position: calc(40.74%
+      + 71.99% * clamp(0, calc(100cqi / 177cqh - 0.25), 0.19)
+      - 6.45% * clamp(0, calc(100cqi / 177cqh - 0.44), 0.22)
+      - 49.84% * clamp(0, calc(100cqi / 177cqh - 0.66), 0.21)
+      + 57.37% * clamp(0, calc(100cqi / 177cqh - 0.87), 0.13)
+    );
+  }
 }
 
 .hero-content {
