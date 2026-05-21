@@ -16,9 +16,13 @@
   --color-border: #dddddd;
   --color-header-bg: #191724;
   --color-header-text: #ffffff;
+  --color-hero-bg: #f5f0ea;
   --color-hero-text-bg: rgba(255, 255, 255, 0.9);
 
   /* Typography */
   --font-main: system-ui, -apple-system, sans-serif;
   --line-height: 1.6;
+
+  /* LQIP */
+    --hero-lqip-placeholder: url("data:image/webp;base64,UklGRjYAAABXRUJQVlA4ICoAAAC0AQCdASoQAAkAAAB8AAALniHAUgAQAP7rJabr4x9aF9N5fX55HI7igAA=");
 }

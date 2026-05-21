@@ -17,6 +17,7 @@
   width: 100%;
   height: 100%;
   z-index: 0;
+  background: var(--hero-lqip-placeholder) 40.74% 50% / cover no-repeat, var(--color-hero-bg);
 }
 
 .hero-bg {
@@ -24,6 +25,19 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  opacity: 0;
+  filter: blur(20px);
+  animation:
+    revealOpacity 0.3s ease-in forwards,
+    revealBlur 0.2s ease-out 0.3s forwards;
+}
+
+@keyframes revealOpacity {
+  to { opacity: 1; }
+}
+
+@keyframes revealBlur {
+  to { filter: blur(0); }
 }
 
 @supports(object-position: 50cqi) {
