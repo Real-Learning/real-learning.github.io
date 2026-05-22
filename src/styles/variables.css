@@ -1,7 +1,7 @@
 :root {
   /* Layout */
   --content-max-width: 1200px;
-  --header-height: 64px;
+  --header-height: clamp(48px, 5vw, 64px);
   --section-padding: 4rem 1rem;
 
   /* Fact Section Offsets */

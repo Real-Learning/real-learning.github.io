@@ -50,3 +50,14 @@ section {
   outline: 3px solid var(--color-primary);
   outline-offset: 2px;
 }
+
+/* Generic Text Styling */
+.phrase {
+  display: inline-block;
+}
+
+/*
+* {
+  outline: 1px solid red;
+}
+*/
