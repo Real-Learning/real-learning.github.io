@@ -8,6 +8,7 @@
   align-items: center;
   overflow: hidden;
   padding: 0;
+  background-color: var(--color-hero-bg);
 }
 
 .hero-image-container {
@@ -17,13 +18,13 @@
   width: 100%;
   height: 100%;
   z-index: 0;
-  background: var(--hero-lqip-placeholder) 40.74% 50% / cover no-repeat, var(--color-hero-bg);
+  background: var(--hero-lqip-placeholder) 50% 50% / contain no-repeat;
 }
 
-.hero-bg {
+.hero-image {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: 101%; /* to remove a right edge artifact from the background */
+  object-fit: contain;
   display: block;
   opacity: 0;
   filter: blur(20px);
@@ -40,14 +41,26 @@
   to { filter: blur(0); }
 }
 
-@supports(object-position: 50cqi) {
-  .hero-bg {
-    object-position: calc(40.74%
-      + 71.99% * clamp(0, calc(100cqi / 177cqh - 0.25), 0.19)
-      - 6.45% * clamp(0, calc(100cqi / 177cqh - 0.44), 0.22)
-      - 49.84% * clamp(0, calc(100cqi / 177cqh - 0.66), 0.21)
-      + 57.37% * clamp(0, calc(100cqi / 177cqh - 0.87), 0.13)
-    );
+@container (max-aspect-ratio: 16/9) {
+  .hero-image {
+    object-position: 40.74%;
+  }
+
+  .hero-image-container {
+    background-position: 40.74% 50%;
+    background-size: cover;
+  }
+
+  @supports(object-position: 50cqi) {
+    .hero-image {
+      object-fit: cover;
+      object-position: calc(40.743%
+        + 71.988% * clamp(0, calc(100cqi / 178cqh - 0.253), 0.187)
+        - 103.530% * clamp(0, calc(100cqi / 178cqh - 0.440), 0.127)
+        + 115.795% * clamp(0, calc(100cqi / 178cqh - 0.566), 0.099)
+        - 7.686% * clamp(0, calc(100cqi / 178cqh - 0.666), 0.334)
+      );
+    }
   }
 }
 
