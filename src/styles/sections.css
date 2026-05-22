@@ -54,11 +54,12 @@
   @supports(object-position: 50cqi) {
     .hero-image {
       object-fit: cover;
+      --visible-img-part: calc(1cqi / 1cqh / var(--hero-img-aspect-ratio));
       object-position: calc(40.743%
-        + 71.988% * clamp(0, calc(100cqi / 178cqh - 0.253), 0.187)
-        - 103.530% * clamp(0, calc(100cqi / 178cqh - 0.440), 0.127)
-        + 115.795% * clamp(0, calc(100cqi / 178cqh - 0.566), 0.099)
-        - 7.686% * clamp(0, calc(100cqi / 178cqh - 0.666), 0.334)
+        + 71.988% * clamp(0, calc(var(--visible-img-part) - 0.253), 0.187)
+        - 103.530% * clamp(0, calc(var(--visible-img-part) - 0.440), 0.127)
+        + 115.795% * clamp(0, calc(var(--visible-img-part) - 0.566), 0.099)
+        - 7.686% * clamp(0, calc(var(--visible-img-part) - 0.666), 0.334)
       );
     }
   }

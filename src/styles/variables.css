@@ -1,4 +1,7 @@
 :root {
+  /* Hardcoded constants */
+  --hero-img-aspect-ratio: 1.777777777;
+
   /* Layout */
   --content-max-width: 1200px;
   --header-height: clamp(48px, 5vw, 64px);
