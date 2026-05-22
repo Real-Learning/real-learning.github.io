@@ -17,25 +17,29 @@ header.header--scrolled {
 }
 
 header .width-limiter {
+  height: 100%; /* just pass the height over to set it top down instead of bottom-up */
+}
+
+.header-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 100%;
 }
 
-.logo {
-  display: block;
-  height: 40px;
-}
-
 .logo img {
-  height: 100%;
+  max-height: 100%;
+  max-width: 100%;
   width: auto;
+  height: auto;
   display: block;
 }
 
 header .logo {
-  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  height: 100%;
+  max-width: 80%;
 }
 
 header nav {
@@ -64,20 +68,6 @@ header nav {
 
 .nav-links a:hover {
   text-decoration: underline;
-}
-
-.header-cta {
-  background: var(--color-primary);
-  color: white;
-  padding: 0.5rem 1.25rem;
-  border-radius: 4px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.2s;
-}
-
-.header-cta:hover {
-  background: var(--color-primary-hover);
 }
 
 /* More Menu (...) placeholder */
@@ -122,6 +112,11 @@ footer {
   color: #ffffff;
   padding: 3rem 1rem;
   margin-top: auto;
+}
+
+footer .logo {
+  display: block;
+  height: 40px;
 }
 
 .footer-content {

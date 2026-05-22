@@ -4,7 +4,7 @@
 
   /* Layout */
   --content-max-width: 1200px;
-  --header-height: clamp(48px, 5vw, 64px);
+  --header-height: clamp(48px, min(5vw, 10vh), 64px);
   --section-padding: 4rem 1rem;
 
   /* Fact Section Offsets */
@@ -20,11 +20,14 @@
   --color-header-bg: #191724;
   --color-header-text: #ffffff;
   --color-hero-bg: #f6f5f1;
-  --color-hero-text-bg: rgba(255, 255, 255, 0.9);
+  --color-hero-text-bg: rgba(255, 255, 255, 0.7);
 
   /* Typography */
   --font-main: system-ui, -apple-system, sans-serif;
   --line-height: 1.6;
+  --hero-font-size: clamp(1rem, 4vw, 1.5rem);
+  --hero-font-size-h1: calc(1.5 * var(--hero-font-size));
+  --hero-std-margin: calc(1.5 * var(--hero-font-size));
 
   /* LQIP */
     --hero-lqip-placeholder: url("data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAADwAQCdASoQAAgAABgSJ6QCdAEO99mPP/AA/v+HjsQhfwf9msfHpBChJdy1bY9VNr3CFO50ca5CBI2aJvGG80hKYIplPp6UnNwSJ5kyYddrBGhC95LUFOVeUkqDK3pboAA=");
