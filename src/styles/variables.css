@@ -1,6 +1,6 @@
 :root {
   /* Hardcoded constants */
-  --hero-img-aspect-ratio: 1.777777777;
+  --hero-img-aspect-ratio: 2.133333333;
 
   /* Layout */
   --content-max-width: 1200px;
@@ -27,5 +27,5 @@
   --line-height: 1.6;
 
   /* LQIP */
-    --hero-lqip-placeholder: url("data:image/webp;base64,UklGRjYAAABXRUJQVlA4ICoAAAC0AQCdASoQAAkAAAB8AAALniHAUgAQAP7rJabr4x9aF9N5fX55HI7igAA=");
+    --hero-lqip-placeholder: url("data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAADwAQCdASoQAAgAABgSJ6QCdAEO99mPP/AA/v+HjsQhfwf9msfHpBChJdy1bY9VNr3CFO50ca5CBI2aJvGG80hKYIplPp6UnNwSJ5kyYddrBGhC95LUFOVeUkqDK3pboAA=");
 }

@@ -1,8 +1,12 @@
 /* Hero Section - Image */
 .hero {
   position: relative;
-  width: 100vw;
-  height: calc(100dvh - 100px); /* Peek-ahead at next section */
+  width: 100%;
+  height: clamp(
+    420px,
+    calc(100dvh - var(--header-height) - 150px), /* Peek-ahead at next section */
+    calc(2 * 100vw) /* hard limit on the crop */
+  );
   container-type: size;
   display: flex;
   align-items: center;
@@ -41,19 +45,19 @@
   to { filter: blur(0); }
 }
 
-@container (max-aspect-ratio: 16/9) {
+@container (max-aspect-ratio: 16/7.5) { /* 16/7.5 is hero image aspect ratio - can't use vars here :( */
   .hero-image {
-    object-position: 40.74%;
+    object-fit: cover;
+    object-position: 40.743%;
   }
 
   .hero-image-container {
-    background-position: 40.74% 50%;
     background-size: cover;
+    background-position: 40.74% 50%;
   }
 
   @supports(object-position: 50cqi) {
     .hero-image {
-      object-fit: cover;
       --visible-img-part: calc(1cqi / 1cqh / var(--hero-img-aspect-ratio));
       object-position: calc(40.743%
         + 71.988% * clamp(0, calc(var(--visible-img-part) - 0.253), 0.187)
