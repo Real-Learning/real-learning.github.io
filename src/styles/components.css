@@ -40,6 +40,8 @@ header .logo {
   align-items: center;
   height: 100%;
   max-width: 80%;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 header nav {

@@ -2,13 +2,25 @@
   /* Hardcoded constants */
   --hero-img-aspect-ratio: 2.133333333;
 
-  /* Layout */
-  --content-max-width: 1200px;
+  /* Layout - common */
+  --content-max-width: 1280px;
   --header-height: clamp(48px, min(5vw, 10vh), 64px);
-  --section-padding: 4rem 1rem;
 
-  /* Fact Section Offsets */
-  --fact-offset: 20%;
+  /* Layout - Hero */
+  --hero-font-size: clamp(1rem, 4vw, 1.5rem);
+  --hero-font-size-h1: calc(1.5 * var(--hero-font-size));
+  --hero-std-margin: calc(1.5 * var(--hero-font-size));
+
+  /* Layout - Sections */
+  --section-font-size: clamp(1rem, 4vw, 1.125rem);
+  --section-font-size-h2: calc(1.25 * var(--section-font-size));
+  --section-std-margin: calc(1.5 * var(--section-font-size));
+
+  /* Layout - Facts */
+  --fact-icon-size: 128px;
+  --min-fact-offset: calc(var(--fact-icon-size) / 2);
+  --max-fact-offset: calc(0.1 * var(--content-max-width));
+  --fact-offset: clamp(var(--min-fact-offset), calc(100vw - var(--content-max-width) + var(--max-fact-offset)), var(--max-fact-offset));
 
   /* Colors (WCAG AA Compliant contrast targets) */
   --color-bg: #ffffff;
@@ -25,9 +37,6 @@
   /* Typography */
   --font-main: system-ui, -apple-system, sans-serif;
   --line-height: 1.6;
-  --hero-font-size: clamp(1rem, 4vw, 1.5rem);
-  --hero-font-size-h1: calc(1.5 * var(--hero-font-size));
-  --hero-std-margin: calc(1.5 * var(--hero-font-size));
 
   /* LQIP */
     --hero-lqip-placeholder: url("data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAADwAQCdASoQAAgAABgSJ6QCdAEO99mPP/AA/v+HjsQhfwf9msfHpBChJdy1bY9VNr3CFO50ca5CBI2aJvGG80hKYIplPp6UnNwSJ5kyYddrBGhC95LUFOVeUkqDK3pboAA=");

@@ -118,53 +118,65 @@
 .facts-container {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  padding: 0rem 0;
+  gap: var(--section-std-margin);
+  padding: var(--section-std-margin);
 }
 
 .fact-sliver {
   display: flex;
   align-items: center;
-  gap: 2rem;
-  padding: 2rem;
+  gap: var(--section-std-margin);
+  padding: var(--section-std-margin);
   background: var(--color-secondary);
   border-radius: 12px;
+  margin: 0%;
   width: 100%;
 }
 
-.fact-sliver:nth-child(even) {
-  margin-left: var(--fact-offset);
-  width: calc(100% - var(--fact-offset));
-}
+@media (min-width: 768px) {
+  .fact-sliver:nth-child(even) {
+    margin-left: var(--fact-offset);
+    width: calc(100% - var(--fact-offset));
+  }
 
-.fact-sliver:nth-child(odd) {
-  margin-right: var(--fact-offset);
-  width: calc(100% - var(--fact-offset));
-}
-
-@media (max-width: 768px) {
-  .fact-sliver:nth-child(even),
   .fact-sliver:nth-child(odd) {
-    margin: 0;
-    width: 100%;
+    margin-right: var(--fact-offset);
+    width: calc(100% - var(--fact-offset));
   }
 }
 
 .fact-icon {
   flex-shrink: 0;
-  width: 60px;
-  height: 60px;
+  width: 128px;
+  height: 128px;
   background: var(--color-primary);
   border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
+  font-size: 3rem;
+}
+
+.fact-content {
+  font-size: var(--section-font-size);
 }
 
 .fact-content h2 {
-  font-size: 1.25rem;
-  margin-bottom: 0.5rem;
+  font-size: var(--section-font-size-h2);
+  margin-bottom: calc(0.4 * var(--section-font-size-h2));
+}
+
+.fact-content ul { /* bullet points */
+    text-align: left; /* keep left even when the rest is centered */
+    margin-left: var(--section-std-margin) /* bullet points encroach on margins otherwise */
+}
+
+@media (max-width: 430px) {
+  .fact-sliver {
+    flex-direction: column;
+    text-align: center;
+  }
 }
 
 /* Contact Section */
