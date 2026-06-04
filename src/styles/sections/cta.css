@@ -1,0 +1,176 @@
+.cta-section {
+  background-color: var(--color-secondary);
+  padding: calc(2 * var(--section-std-margin)) var(--section-std-margin) calc(2 * var(--section-std-margin)) var(--section-std-margin);
+}
+
+.cta-caption h1 {
+  text-align: center;
+  font-size: var(--section-font-size-h1);
+  margin-bottom: 3rem;
+}
+
+.cta-wrapper {
+  display: flex;
+  flex-direction: row-reverse;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgb(0 0 0 / 8%);
+  overflow: hidden;
+  align-items: stretch;
+}
+
+/* Signup Form */
+.signup-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 3rem;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  border-top: 1px solid var(--color-border);
+  border-right: 1px solid var(--color-border);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: bold;
+  font-size: 1rem;
+  color: var(--color-text);
+}
+
+.form-group input {
+  padding: 0.8rem;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 1rem;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  width: 100%;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgb(0 86 179 / 15%);
+}
+
+.cta-submit-btn {
+  background: var(--color-primary);
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.cta-submit-btn:hover {
+  background: var(--color-primary-hover);
+}
+
+/* Offer Block - Pricing Tiers */
+.offer-block {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  padding: 3rem;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  color: var(--color-text);
+}
+
+.offer-tier {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.offer-tier h3 {
+  font-size: var(--section-font-size-h2);
+}
+
+.offer-tier ul {
+  padding-left: 1.8rem;
+  margin: 0;
+}
+
+.offer-tier li {
+  font-size: var(--section-font-size);
+}
+
+.strikethrough {
+  text-decoration: line-through;
+  opacity: 0.75;
+}
+
+/* Success / Error Statuses */
+.signup-status {
+  display: none;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.signup-status.status--error {
+  display: block;
+  color: #c62828;
+  margin-top: 0.5rem;
+}
+
+.signup-form.signup-form--success .form-group,
+.signup-form.signup-form--success .cta-submit-btn {
+  display: none;
+}
+
+.signup-form.signup-form--success .signup-status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: #2e7d32;
+  padding: 2rem 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .form-group input:focus {
+    box-shadow: 0 0 0 3px rgb(77 163 255 / 25%);
+  }
+
+  .signup-status.status--error {
+    color: #e57373;
+  }
+
+  .signup-form.signup-form--success .signup-status {
+    color: #81c784;
+  }
+}
+
+@media (width < 768px) {
+  .cta-wrapper {
+    flex-direction: column;
+  }
+
+  .signup-form {
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+    padding: 2rem;
+  }
+
+  .offer-block {
+    padding: 2rem;
+  }
+}
