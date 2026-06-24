@@ -54,6 +54,10 @@ section {
   display: inline-block;
 }
 
+.strikethrough {
+  text-decoration: line-through;
+}
+
 /*
 * {
   outline: 1px solid red;
