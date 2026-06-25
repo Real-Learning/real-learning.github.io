@@ -35,15 +35,15 @@
   opacity: 0;
   filter: blur(20px);
   animation:
-    revealOpacity 0.3s ease-in forwards,
-    revealBlur 0.2s ease-out 0.3s forwards;
+    reveal-opacity 0.3s ease-in forwards,
+    reveal-blur 0.2s ease-out 0.3s forwards;
 }
 
-@keyframes revealOpacity {
+@keyframes reveal-opacity {
   to { opacity: 1; }
 }
 
-@keyframes revealBlur {
+@keyframes reveal-blur {
   to { filter: blur(0); }
 }
 
@@ -61,6 +61,7 @@
   @supports(object-position: 50cqi) {
     .hero-image {
       --visible-img-part: calc(1cqi / 1cqh / var(--hero-img-aspect-ratio));
+
       object-position: calc(40.743%
         + 71.988% * clamp(0, calc(var(--visible-img-part) - 0.253), 0.187)
         - 103.530% * clamp(0, calc(var(--visible-img-part) - 0.440), 0.127)
@@ -86,7 +87,7 @@
   padding: var(--hero-std-margin);
   margin: var(--hero-std-margin);
   border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 20px rgb(0 0 0 / 10%);
 }
 
 .hero-text h1 {

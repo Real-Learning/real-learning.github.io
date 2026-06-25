@@ -16,7 +16,7 @@
   width: 100%;
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   .fact-sliver:nth-child(even) {
     margin-left: var(--fact-offset);
     width: calc(100% - var(--fact-offset));
@@ -57,7 +57,7 @@
     margin-left: var(--section-std-margin) /* bullet points encroach on margins otherwise */
 }
 
-@media (max-width: 430px) {
+@media (width <= 430px) {
   .fact-sliver {
     flex-direction: column;
     text-align: center;

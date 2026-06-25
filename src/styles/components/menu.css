@@ -8,7 +8,7 @@
   padding: 0.5rem;
 }
 
-@media (max-width: 767px) {
+@media (width < 768px) {
   .more-menu {
     display: block;
   }
@@ -23,7 +23,7 @@
     background: var(--color-bg);
     padding: 1.5rem;
     border-bottom: 1px solid var(--color-border);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgb(0 0 0 / 10%);
     gap: 1.5rem;
     z-index: 99;
   }
