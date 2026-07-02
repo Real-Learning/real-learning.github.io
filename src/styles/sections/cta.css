@@ -1,5 +1,5 @@
 .cta-section {
-  background-color: var(--color-secondary);
+  background-color: var(--color-bg-secondary);
   padding: calc(2 * var(--section-std-margin)) var(--section-std-margin) calc(2 * var(--section-std-margin)) var(--section-std-margin);
 }
 

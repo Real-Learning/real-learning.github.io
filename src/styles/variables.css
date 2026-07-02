@@ -26,10 +26,10 @@
 
   /* Colors (WCAG AA Compliant contrast targets) */
   --color-bg: #ffffff;
+  --color-bg-secondary: #f4f4f4;
   --color-text: #1a1a1a;
   --color-primary: #0056b3; /* High contrast blue */
   --color-primary-hover: #004494;
-  --color-secondary: #f4f4f4;
   --color-border: #dddddd;
   --color-header-bg: #191724;
   --color-header-text: #ffffff;
