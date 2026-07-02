@@ -9,7 +9,7 @@
   align-items: center;
   gap: var(--section-std-margin);
   padding: var(--section-std-margin);
-  background: var(--color-secondary);
+  background: var(--color-bg-secondary);
   border-radius: 12px;
   margin: 0%;
   width: 100%;
