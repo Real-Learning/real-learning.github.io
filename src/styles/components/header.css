@@ -38,9 +38,8 @@ header .logo {
   display: flex;
   align-items: center;
   height: 100%;
-  max-width: 80%;
-  padding-left: 16px;
-  padding-right: 16px;
+  max-width: 80%; /* scales logo down on hyper narrow screens */
+  padding: 0 10px;
 }
 
 header nav {
@@ -67,6 +66,11 @@ header nav {
   font-size: 1.25rem;
 }
 
-.nav-links a:hover {
+.nav-links a:not(.header-signup-btn):hover {
   text-decoration: underline;
+}
+
+.header-signup-btn {
+  padding: calc(var(--header-height)/8 - 4px) 20px;
+  height: auto;
 }

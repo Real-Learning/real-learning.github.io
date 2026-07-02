@@ -1,49 +1,66 @@
+/* === footer space === */
 footer {
   background: var(--color-header-bg);
   color: #ffffff;
-  padding: 3rem 1rem;
+  padding: 3rem 1.5rem;
   margin-top: auto;
 }
 
-footer .logo {
-  display: block;
-  height: 40px;
-}
-
+/* === footer structure === */
 .footer-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
+@media (width < 768px) {
+  .footer-content {
+    flex-direction: column-reverse;
+    padding: 0 20px;
+  }
+}
+
+/* === footer logo and copyright === */
 .footer-logo-section {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
+footer .logo {
+  height: 40px;
+}
+
+/* === footer links sections === */
 .footer-links {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  min-width: 100px;
+}
+
+.footer-links > p {
+  align-self: flex-start;
+  color: #ffffff;
 }
 
 .footer-links h3 {
   font-size: 1rem;
   margin-bottom: 0.5rem;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #ffffff;
+  letter-spacing: 0.05rem;
+}
+
+.footer-links p {
+  width: auto;
+  text-decoration: none;
+  color: color-mix(in srgb, currentcolor 80%, var(--color-header-bg) 20%);
 }
 
 .footer-links a {
-  text-decoration: none;
-  color: #ffffff;
-  opacity: 0.8;
-  transition: opacity 0.2s;
+  color: inherit;
 }
 
 .footer-links a:hover {
-  opacity: 1;
   color: var(--color-primary);
 }
