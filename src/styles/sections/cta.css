@@ -64,19 +64,9 @@
 }
 
 .cta-submit-btn {
-  background: var(--color-primary);
-  color: #ffffff;
   border: none;
-  cursor: pointer;
-  padding: 1rem;
-  font-size: 1rem;
-  font-weight: bold;
-  border-radius: 4px;
-  transition: background-color 0.2s;
-}
-
-.cta-submit-btn:hover {
-  background: var(--color-primary-hover);
+  padding: 0.8rem;
+  font-size: 1.2rem;
 }
 
 /* Offer Block - Pricing Tiers */
