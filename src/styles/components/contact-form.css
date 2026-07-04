@@ -1,0 +1,207 @@
+/* Contact Dialog Styling */
+.contact-dialog {
+  border: none;
+  background: transparent;
+  padding: 0;
+  max-width: 500px;
+  width: calc(100% - 2.0rem);
+  margin: auto;
+  border-radius: 12px;
+  box-shadow: 0 20px 50px rgb(0 0 0 / 30%);
+  overflow: visible;
+}
+
+.contact-dialog-wrapper {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 2.5rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-dialog-close {
+  position: absolute;
+  top: 1.0rem;
+  right: 1.2rem;
+  background: transparent;
+  border: none;
+  font-size: 1.75rem;
+  cursor: pointer;
+  color: var(--color-text);
+  opacity: 0.6;
+  line-height: 1;
+  transition: opacity 0.2s, transform 0.2s;
+  padding: 0.2rem;
+}
+
+.contact-dialog-close:hover {
+  opacity: 1.0;
+  transform: scale(1.1);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.contact-form h2 {
+  font-size: var(--section-font-size-h2);
+  margin-bottom: 0.2rem;
+  color: var(--color-text);
+}
+
+.contact-subtitle {
+  font-size: 0.9rem;
+  color: var(--color-text);
+  opacity: 0.8;
+  margin-bottom: 0.5rem;
+}
+
+/* Align form-group styling with signup/cta form */
+.contact-dialog .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contact-dialog .form-group label {
+  font-weight: bold;
+  font-size: 1.0rem;
+  color: var(--color-text);
+}
+
+.contact-dialog .form-group input,
+.contact-dialog .form-group textarea {
+  padding: 0.8rem;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 1.0rem;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  width: 100%;
+}
+
+.contact-dialog .form-group textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.contact-dialog .form-group input:focus,
+.contact-dialog .form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgb(0 86 179 / 15%);
+}
+
+@media (prefers-color-scheme: dark) {
+  .contact-dialog .form-group input:focus,
+  .contact-dialog .form-group textarea:focus {
+    box-shadow: 0 0 0 3px rgb(77 163 255 / 25%);
+  }
+}
+
+.contact-submit-btn {
+  border: none;
+  padding: 0.8rem;
+  font-size: 1.15rem;
+  margin-top: 0.5rem;
+}
+
+/* Success State container */
+.contact-success-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  text-align: center;
+  padding: 1.5rem 0;
+  color: #2e7d32;
+}
+
+.contact-success-container h3 {
+  font-size: var(--section-font-size-h2);
+  color: var(--color-text);
+  margin-top: 0.5rem;
+}
+
+.contact-success-container p {
+  font-size: 1.0rem;
+  color: var(--color-text);
+  opacity: 0.8;
+  max-width: 320px;
+  line-height: 1.5;
+}
+
+.contact-ok-btn {
+  padding: 0.6rem 2.5rem;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+}
+
+/* Dialog status messaging */
+.contact-status {
+  display: none;
+  font-size: 1.0rem;
+  text-align: center;
+}
+
+.contact-status.status--error {
+  display: block;
+  color: #c62828;
+  margin-top: 0.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .contact-success-container {
+    color: #81c784;
+  }
+
+  .contact-status.status--error {
+    color: #e57373;
+  }
+}
+
+/* Backdrop blurring filter (the reasonable filter) */
+.contact-dialog::backdrop {
+  background-color: rgb(0 0 0 / 60%);
+  backdrop-filter: blur(5px);
+}
+
+/* Animations for modern and premium feel */
+.contact-dialog[open] {
+  animation: dialog-show 0.25s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.contact-dialog[open]::backdrop {
+  animation: backdrop-show 0.25s ease forwards;
+}
+
+@keyframes dialog-show {
+  from {
+    opacity: 0.0;
+    transform: scale(0.92) translateY(15px);
+  }
+
+  to {
+    opacity: 1.0;
+    transform: scale(1.0) translateY(0);
+  }
+}
+
+@keyframes backdrop-show {
+  from {
+    background-color: rgb(0 0 0 / 0%);
+    backdrop-filter: blur(0);
+  }
+
+  to {
+    background-color: rgb(0 0 0 / 60%);
+    backdrop-filter: blur(5px);
+  }
+}

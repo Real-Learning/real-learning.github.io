@@ -49,6 +49,62 @@
           %VITE_CORP_FB_VISUAL%
         </a>
       </p>
+      <button type="button" class="contact-us-btn button" id="contact-us-btn">Ask us a question</button>
     </div>
   </div>
 </div>
+
+<dialog id="contact-dialog" class="contact-dialog" aria-labelledby="contact-title" aria-modal="true">
+  <div class="contact-dialog-wrapper">
+    <button type="button" class="contact-dialog-close" id="contact-dialog-close" aria-label="Close dialog">&times;</button>
+
+    <div id="contact-form-container">
+      <form id="contact-form" class="contact-form" novalidate>
+
+        <div class="form-group">
+          <label for="contact-name">Name</label>
+          <input type="text" id="contact-name" name="name" required placeholder="John Doe" autocomplete="name" />
+        </div>
+
+        <div class="form-group">
+          <label for="contact-phone">Phone Number</label>
+          <input
+            type="tel"
+            id="contact-phone"
+            name="phone"
+            required
+            placeholder="(123) 456-7890"
+            autocomplete="tel"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="contact-question">Question</label>
+          <textarea
+            id="contact-question"
+            name="question"
+            required
+            placeholder="Do all your mentors have successful engineering careers?
+Do you guys teach programming from zero?"
+            rows="6"
+          ></textarea>
+        </div>
+
+        <button type="submit" class="contact-submit-btn button">Send</button>
+
+        <div id="contact-status" class="contact-status" aria-live="polite"></div>
+      </form>
+    </div>
+
+    <div id="contact-success-container" class="contact-success-container" style="display: none;" aria-hidden="true">
+      <svg class="success-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="width: 48px; height: 48px;">
+        <polyline points="20 6 9 17 4 12"></polyline>
+      </svg>
+      <h3>Thank you!</h3>
+      <p>Your question has been sent. We will get back to you soon.</p>
+      <button type="button" class="button contact-ok-btn" id="contact-ok-btn">OK</button>
+    </div>
+  </div>
+</dialog>
+
+<script type="module" src="/src/lib/contact-form.ts"></script>
