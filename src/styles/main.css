@@ -3,6 +3,7 @@
 @import "./components/header.css";
 @import "./components/menu.css";
 @import "./components/footer.css";
+@import "./components/contact-form.css";
 @import "./sections/hero.css";
 @import "./sections/facts.css";
 @import "./sections/cta.css";
