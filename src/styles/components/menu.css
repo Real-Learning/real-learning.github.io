@@ -1,35 +1,110 @@
-.more-menu {
+.menu-toggle {
   display: none;
   background: none;
   border: none;
-  font-size: 1.5rem;
   cursor: pointer;
-  color: var(--color-text);
   padding: 0.5rem;
 }
 
+/* Hamburger icon design */
+.hamburger-box {
+  width: 24px;
+  height: 18px;
+  display: inline-block;
+  position: relative;
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-header-text);
+  position: absolute;
+  left: 0;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.hamburger-inner {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hamburger-inner::before {
+  content: "";
+  top: -8px;
+}
+
+.hamburger-inner::after {
+  content: "";
+  bottom: -8px;
+  transition: bottom 0.2s ease, transform 0.2s ease;
+}
+
+/* Active hamburger animation (X shape) */
+.menu-toggle[aria-expanded="true"] .hamburger-inner {
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.menu-toggle[aria-expanded="true"] .hamburger-inner::before {
+  opacity: 0;
+}
+
+.menu-toggle[aria-expanded="true"] .hamburger-inner::after {
+  bottom: 0;
+  transform: rotate(-90deg);
+}
+
 @media (width < 768px) {
-  .more-menu {
-    display: block;
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .nav-links {
     display: none;
     flex-direction: column;
+    padding-left: 0; /* we don't have bullet points, so no extra indent needed */
+    padding-top: 0.5rem;
+    height: auto;
     position: absolute;
     top: var(--header-height);
     left: 0;
     width: 100%;
-    background: var(--color-bg);
-    padding: 1.5rem;
+    background: var(--color-header-bg);
+    color: var(--color-header-text);
     border-bottom: 1px solid var(--color-border);
-    box-shadow: 0 4px 10px rgb(0 0 0 / 10%);
-    gap: 1.5rem;
+    box-shadow: 0 4px 10px rgb(0 0 0 / 30%);
+    gap: 1.25rem;
     z-index: 99;
   }
 
   .nav-links.nav-links--open {
     display: flex;
+  }
+
+  /* Reset desktop specific heights/flex styles on mobile */
+  .nav-links * {
+    display: block;
+    height: auto;
+    width: 100%;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a {
+    padding: 0.3rem 1rem;
+    width: 100%;
+  }
+
+  .nav-links .header-signup-btn {
+    display: block;
+    text-align: center;
+    padding: 0.75rem 1.5rem;
+    width: 100%;
   }
 }
 

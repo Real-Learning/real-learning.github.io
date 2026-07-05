@@ -5,21 +5,19 @@
     </a>
 
     <nav aria-label="Main navigation">
-      <ul class="nav-links" id="main-nav">
+      <ul class="nav-links" id="nav-links">
         <li><a href="/about.html">About Us</a></li>
         <li><a href="/faq.html">FAQ</a></li>
         <li><a href="/careers.html">Careers</a></li>
         <li><a href="/#offers" class="button header-signup-btn">Sign Up</a></li>
       </ul>
     </nav>
-    <div>
-    </div>
 
-    <div style="display: flex; align-items: center; gap: 1rem;">
-      <button class="more-menu" id="menu-toggle" aria-label="More menu" aria-expanded="false">
-        &bull;&bull;&bull;
-      </button>
-    </div>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-nav">
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
   </div>
   <script type="module" src="/src/lib/header.ts"></script>
 </div>

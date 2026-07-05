@@ -9,7 +9,12 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 
 const menuToggle = document.querySelector('#menu-toggle') as HTMLButtonElement;
-const navLinks = document.querySelector('#main-nav') as HTMLElement;
+const navLinks = document.querySelector('#nav-links') as HTMLElement;
+
+const closeMenu = () => {
+  menuToggle.setAttribute('aria-expanded', 'false');
+  navLinks.classList.remove('nav-links--open');
+};
 
 menuToggle.addEventListener('click', () => {
   const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
@@ -24,10 +29,31 @@ menuToggle.addEventListener('click', () => {
   }
 });
 
+const signupBtn = document.querySelector('.header-signup-btn') as HTMLElement;
+signupBtn.addEventListener('click', () => {
+  closeMenu();
+});
+
+// Close menu on pressing Escape key
+window.addEventListener('keydown', (event: KeyboardEvent) => {
+  if (event.key === 'Escape' && menuToggle.getAttribute('aria-expanded') === 'true') {
+    closeMenu();
+    menuToggle.focus();
+  }
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (event: MouseEvent) => {
+  const target = event.target as HTMLElement;
+  const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+  if (isExpanded && !menuToggle.contains(target) && !navLinks.contains(target)) {
+    closeMenu();
+  }
+});
+
 const handleResize = () => {
   if (window.innerWidth >= 768) {
-    menuToggle.setAttribute('aria-expanded', 'false');
-    navLinks.classList.remove('nav-links--open');
+    closeMenu();
   }
 };
 
