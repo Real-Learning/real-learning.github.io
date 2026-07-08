@@ -1,0 +1,86 @@
+<section class="width-limiter careers-section">
+  <h1 class="careers-heading">Join Our Team</h1>
+  <p class="careers-subtitle">
+    We have just opened and are not hiring yet. We will start soon, and we will need
+    experienced engineers for full-time and part-time mentorship roles, as well as admin,
+    sales, and marketing professionals. If you are interested in our quest of raising young
+    engineers, drop your contacts, so we get in touch once we have the openings.
+  </p>
+
+  <div class="careers-card">
+    <form id="careers-form" class="careers-form" novalidate>
+
+      <div class="form-group">
+        <label for="careers-name">Name</label>
+        <input
+          type="text"
+          id="careers-name"
+          name="name"
+          required
+          placeholder="John Doe"
+          autocomplete="name"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="careers-email">Email Address</label>
+        <input
+          type="email"
+          id="careers-email"
+          name="email"
+          required
+          placeholder="john@example.com"
+          autocomplete="email"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="careers-phone">Phone Number</label>
+        <input
+          type="tel"
+          id="careers-phone"
+          name="phone"
+          required
+          placeholder="(123) 456-7890"
+          autocomplete="tel"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="careers-resume">Resume or LinkedIn URL</label>
+        <input
+          type="url"
+          id="careers-resume"
+          name="resume_link"
+          required
+          placeholder="linkedin.com/in/your-profile"
+          autocomplete="url"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="careers-message">Areas of Interest</label>
+        <textarea
+          id="careers-message"
+          name="message"
+          required
+          placeholder='e.g. "part-time frontend engineering mentor" or "executive assistant"'
+          rows="5"
+        ></textarea>
+      </div>
+
+      <button type="submit" class="careers-submit-btn button">Apply Now</button>
+
+      <div id="careers-status" class="careers-status" aria-live="polite"></div>
+      <div id="careers-status-success" class="careers-status-success" hidden style="display: none;" aria-hidden="true">
+        <svg class="success-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="width: 48px; height: 48px;">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+        <h3>Thank you!</h3>
+        <p>Your application has been received. We'll be in touch when we have open roles.</p>
+      </div>
+    </form>
+  </div>
+
+  <script type="module" src="/src/lib/careers-form.ts"></script>
+</section>
