@@ -12,41 +12,11 @@
     </header>
 
     <main id="main">
-      <section class="width-limiter" style="padding-top: 6rem; max-width: 700px;">
-        <h1 style="margin-bottom: 1.5rem; text-align: center;">Join Our Team</h1>
-        <p style="text-align: center; margin-bottom: 3rem; opacity: 0.8;">
-          We aren't currently hiring for active roles, but we're always looking for talented instructors and designers. Drop your info below and we'll reach out when we expand!
-        </p>
-
-        <form action="https://formspree.io/f/placeholder" method="POST" class="contact-card" style="display: flex; flex-direction: column; gap: 1.5rem; padding: 2.5rem;">
-          <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-            <label for="name" style="font-weight: bold;">Name (Optional)</label>
-            <input type="text" id="name" name="name" placeholder="Your Name" style="padding: 0.8rem; border: 1px solid var(--color-border); border-radius: 4px; font-family: inherit;">
-          </div>
-
-          <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-            <label for="email" style="font-weight: bold;">Email Address</label>
-            <input type="email" id="email" name="email" required placeholder="email@example.com" style="padding: 0.8rem; border: 1px solid var(--color-border); border-radius: 4px; font-family: inherit;">
-          </div>
-
-          <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-            <label for="interest" style="font-weight: bold;">Area of Interest</label>
-            <select id="interest" name="interest" style="padding: 0.8rem; border: 1px solid var(--color-border); border-radius: 4px; font-family: inherit; background: var(--color-bg); color: var(--color-text);">
-              <option value="instruction">Instruction / Teaching</option>
-              <option value="design">Design / UI / UX</option>
-              <option value="content">Content Creation</option>
-              <option value="other">Other</option>
-            </select>
-          </div>
-
-          <button type="submit" class="header-cta" style="border: none; cursor: pointer; padding: 1rem; font-size: 1rem;">Send My Contacts</button>
-        </form>
-      </section>
+      <load src="src/sections/careers.html" />
     </main>
 
     <footer id="site-footer">
       <load src="src/components/footer.html" />
     </footer>
-
   </body>
 </html>
