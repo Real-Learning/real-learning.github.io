@@ -67,3 +67,8 @@
     padding: 2rem;
   }
 }
+
+/* Stand-alone signup page */
+.signup-body {
+  background-color: var(--color-bg-secondary);
+}
