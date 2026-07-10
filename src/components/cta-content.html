@@ -1,41 +1,47 @@
-<div class="cta-wrapper">
+<div class="form-card cta-wrapper">
   <load src="src/components/offer-content.html" />
 
-  <form id="signup-form" class="signup-form" novalidate>
-    <div class="form-group">
-      <label for="signup-name">Name</label>
-      <input type="text" id="signup-name" name="name" required placeholder="John Doe" autocomplete="name" />
-    </div>
+  <div style="flex: 1;">
+    <form id="signup-form" class="form signup-form" novalidate>
+      <div class="form-group">
+        <label for="signup-name">Name</label>
+        <input type="text" id="signup-name" name="name" required placeholder="John Doe" autocomplete="name" />
+      </div>
 
-    <div class="form-group">
-      <label for="signup-email">Email Address</label>
-      <input type="email" id="signup-email" name="email" required placeholder="john@example.com" autocomplete="email" />
-    </div>
+      <div class="form-group">
+        <label for="signup-email">Email Address</label>
+        <input type="email" id="signup-email" name="email" required placeholder="john@example.com" autocomplete="email" />
+      </div>
 
-    <div class="form-group">
-      <label for="signup-phone">Phone Number</label>
-      <input
-        type="tel"
-        id="signup-phone"
-        name="phone"
-        required
-        placeholder="(123) 456-7890"
-        autocomplete="tel"
-        pattern="(\+?\d{1,3}[- ]?)?[0-9]{3}-[0-9]{3}-[0-9]{4}"
-        title="Please enter a valid phone number, e.g. +1 123-456-7890 or 123-456-7890"
-      />
-    </div>
+      <div class="form-group">
+        <label for="signup-phone">Phone Number</label>
+        <input
+          type="tel"
+          id="signup-phone"
+          name="phone"
+          required
+          placeholder="(123) 456-7890"
+          autocomplete="tel"
+          pattern="(\+?\d{1,3}[- ]?)?[0-9]{3}-[0-9]{3}-[0-9]{4}"
+          title="Please enter a valid phone number, e.g. +1 123-456-7890 or 123-456-7890"
+        />
+      </div>
 
-    <button type="submit" class="cta-submit-btn button">Join Waitlist</button>
+      <button id="cta-submit-btn" type="submit" class="submit-btn button">Join Waitlist</button>
 
-    <div id="signup-status" class="signup-status" aria-live="polite"></div>
-    <div id="signup-status-success" class="signup-status-success" hidden style="display: none;" aria-hidden="true">
+      <div id="signup-error-msg" class="error-msg hidden" aria-hidden="true"></div>
+    </form>
+
+    <div id="signup-success-msg" class="success-msg hidden" aria-hidden="true">
       <svg class="success-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="width: 48px; height: 48px;">
         <polyline points="20 6 9 17 4 12"></polyline>
       </svg>
       <h4>Thank you!</h4>
-      <p>You were successfully added to the waitlist. We will be in touch soon.</p>
+      <p>
+        <span class="phrase">You were successfully added to the waitlist.</span>
+        <span class="phrase">We will be in touch soon.</span>
+      </p>
     </div>
-  </form>
+  </div>
   <script type="module" src="/src/lib/signup-form.ts"></script>
 </div>

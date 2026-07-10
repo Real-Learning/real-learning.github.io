@@ -1,5 +1,5 @@
 <section class="width-limiter careers-section">
-  <h1 class="careers-heading">Join Our Team</h1>
+  <h1>Join Our Team</h1>
   <p class="careers-subtitle">
     We have just opened and are not hiring yet. We will start soon, and we will need
     experienced engineers for full-time and part-time mentorship roles, as well as admin,
@@ -7,8 +7,8 @@
     engineers, drop your contacts, so we get in touch once we have the openings.
   </p>
 
-  <div class="careers-card">
-    <form id="careers-form" class="careers-form" novalidate>
+  <div class="form-card">
+    <form id="careers-form" class="form careers-form" novalidate>
 
       <div class="form-group">
         <label for="careers-name">Name</label>
@@ -69,17 +69,22 @@
         ></textarea>
       </div>
 
-      <button type="submit" class="careers-submit-btn button">Apply Now</button>
+      <button id="careers-submit-btn" type="submit" class="submit-btn button">Apply Now</button>
 
-      <div id="careers-status" class="careers-status" aria-live="polite"></div>
-      <div id="careers-status-success" class="careers-status-success" hidden style="display: none;" aria-hidden="true">
-        <svg class="success-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="width: 48px; height: 48px;">
-          <polyline points="20 6 9 17 4 12"></polyline>
-        </svg>
-        <h3>Thank you!</h3>
-        <p>Your application has been received. We'll be in touch when we have open roles.</p>
-      </div>
+      <div id="careers-error-msg" class="error-msg hidden" aria-hidden="true"></div>
     </form>
+
+    <div id="careers-success-msg" class="success-msg hidden" aria-hidden="true">
+      <svg class="success-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="width: 48px; height: 48px;">
+        <polyline points="20 6 9 17 4 12"></polyline>
+      </svg>
+
+      <h2>Thank you!</h2>
+      <p>
+        <span class="phrase">Your application has been received.</span>
+        <span class="phrase">We'll be in touch when we have open roles.</span>
+      </p>
+    </div>
   </div>
 
   <script type="module" src="/src/lib/careers-form.ts"></script>

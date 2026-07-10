@@ -1,29 +1,24 @@
 /**
  * Careers Application Form Logic
  */
-import { setupPhoneInput, submitForm } from './form-utils.ts';
+import { hide, reveal, setupPhoneInput, submitForm } from './form-utils.ts';
 
 const careersForm = document.querySelector('#careers-form') as HTMLFormElement;
-const careersStatus = document.querySelector('#careers-status') as HTMLDivElement;
-const careersStatusSuccess = document.querySelector('#careers-status-success') as HTMLDivElement;
+const careersErrorMsg = document.querySelector('#careers-error-msg') as HTMLDivElement;
+const careersSuccessMsg = document.querySelector('#careers-success-msg') as HTMLDivElement;
 
 const nameInput = careersForm?.querySelector('#careers-name') as HTMLInputElement;
 const emailInput = careersForm?.querySelector('#careers-email') as HTMLInputElement;
 const phoneInput = careersForm?.querySelector('#careers-phone') as HTMLInputElement;
 const resumeInput = careersForm?.querySelector('#careers-resume') as HTMLInputElement;
 const messageInput = careersForm?.querySelector('#careers-message') as HTMLTextAreaElement;
-const submitBtn = careersForm?.querySelector('.careers-submit-btn') as HTMLButtonElement;
+const submitBtn = careersForm?.querySelector('#careers-submit-btn') as HTMLButtonElement;
 
-if (careersForm && nameInput && emailInput && phoneInput && resumeInput && messageInput && submitBtn) {
+if (careersForm && nameInput && emailInput && phoneInput && resumeInput && messageInput && submitBtn && careersErrorMsg && careersSuccessMsg) {
   const phoneControl = setupPhoneInput(phoneInput);
 
   careersForm.addEventListener('submit', async (event) => {
     event.preventDefault();
-
-    if (careersStatus) {
-      careersStatus.textContent = '';
-      careersStatus.className = 'careers-status';
-    }
 
     const normalizedPhone = await phoneControl.validateAndFormat();
 
@@ -50,16 +45,15 @@ if (careersForm && nameInput && emailInput && phoneInput && resumeInput && messa
       endpoint: '/job_application',
       payload: { name, email, phone: normalizedPhone, resume_link, message },
       onSuccess: () => {
-        careersForm.classList.add('careers-form--success');
-        if (careersStatus && careersStatusSuccess) {
-          careersStatus.innerHTML = careersStatusSuccess.innerHTML;
-        }
+        console.log('Success submitting job_application:');
+        hide(careersForm);
+        reveal(careersSuccessMsg);
       },
       onError: (errText) => {
-        if (careersStatus) {
-          careersStatus.innerHTML = errText;
-          careersStatus.classList.add('status--error');
-        }
+        console.log('Error submitting job_application:');
+        console.log(errText);
+        careersErrorMsg.innerHTML = errText;
+        reveal(careersErrorMsg);
       },
     });
   });
