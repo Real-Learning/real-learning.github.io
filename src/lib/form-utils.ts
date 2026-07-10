@@ -130,9 +130,11 @@ export async function submitForm({
     if (response.ok) {
       onSuccess();
     } else {
+      console.log(response)
       throw new Error('Server responded with an error');
     }
   } catch (error) {
+    console.log(error)
     inputs.forEach(input => {
       input.disabled = false;
     });
@@ -146,4 +148,14 @@ export async function submitForm({
     instead.`;
     onError(errMsg);
   }
+}
+
+export function hide(el: HTMLElement) {
+  el.setAttribute('aria-hidden', 'true');
+  el.classList.add('hidden');
+}
+
+export function reveal(el: HTMLElement) {
+  el.classList.remove('hidden');
+  el.removeAttribute('aria-hidden');
 }

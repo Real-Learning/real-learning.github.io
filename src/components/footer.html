@@ -10,14 +10,14 @@
     </div>
 
     <div class="footer-links">
-      <h3>Company</h3>
+      <h1>Company</h1>
       <p><a href="/about">About Us</a></p>
       <p><a href="/faq">FAQ</a></p>
       <p><a href="/careers">Careers</a></p>
     </div>
 
     <div class="footer-links">
-      <h3>Contact Us</h3>
+      <h1>Contact Us</h1>
       <p>
         <strong>
           @
@@ -55,11 +55,10 @@
 </div>
 
 <dialog id="contact-dialog" class="contact-dialog" aria-labelledby="contact-title" aria-modal="true">
-  <div class="contact-dialog-wrapper">
+  <div class="form-card">
     <button type="button" class="contact-dialog-close" id="contact-dialog-close" aria-label="Close dialog">&times;</button>
 
-    <div id="contact-form-container">
-      <form id="contact-form" class="contact-form" novalidate>
+      <form id="contact-form" class="form" novalidate>
 
         <div class="form-group">
           <label for="contact-name">Name</label>
@@ -90,18 +89,20 @@ Do you guys teach programming from zero?"
           ></textarea>
         </div>
 
-        <button type="submit" class="contact-submit-btn button">Send</button>
+        <button id="contact-submit-btn" type="submit" class="submit-btn button">Send</button>
 
-        <div id="contact-status" class="contact-status" aria-live="polite"></div>
+        <div id="contact-error-msg" class="error-msg hidden" aria-hidden="true"></div>
       </form>
-    </div>
 
-    <div id="contact-success-container" class="contact-success-container" style="display: none;" aria-hidden="true">
+    <div id="contact-success-msg" class="success-msg contact-success-msg hidden" aria-hidden="true">
       <svg class="success-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="width: 48px; height: 48px;">
         <polyline points="20 6 9 17 4 12"></polyline>
       </svg>
-      <h3>Thank you!</h3>
-      <p>Your question has been sent. We will get back to you soon.</p>
+      <h2>Thank you!</h2>
+      <p>
+        <span class="phrase">Your question has been sent.</span>
+        <span class="phrase">We will get back to you soon.</span>
+      </p>
       <button type="button" class="button contact-ok-btn" id="contact-ok-btn">OK</button>
     </div>
   </div>
