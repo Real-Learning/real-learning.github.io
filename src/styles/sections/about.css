@@ -1,0 +1,71 @@
+.about-body {
+  background-color: var(--color-bg-secondary);
+}
+
+.about-section {
+  background-color: var(--color-bg-secondary);
+}
+
+.about-subtitle {
+  text-align: center;
+  font-size: var(--section-font-size);
+  margin-bottom: var(--section-std-margin);
+}
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.staff-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--section-std-margin);
+}
+
+.staff-card {
+  background-color: var(--color-bg);
+  border-radius: var(--card-border-radius);
+  width: var(--staff-card-width);
+  padding: var(--section-std-margin);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--section-std-margin);
+}
+
+.staff-card-picture {
+  width: var(--staff-pic-diameter);
+  height: 160px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.staff-card-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.staff-card-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+.staff-card-text h2 {
+  margin-bottom: 0;
+}
+
+.staff-card-text a {
+  text-decoration: none;
+  color: var(--color-primary);
+}
+
+.staff-job-title {
+  font-weight: bold;
+}
