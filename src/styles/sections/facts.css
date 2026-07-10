@@ -10,7 +10,7 @@
   gap: var(--section-std-margin);
   padding: var(--section-std-margin);
   background: var(--color-bg-secondary);
-  border-radius: 12px;
+  border-radius: var(--card-border-radius);
   margin: 0%;
   width: 100%;
 }
@@ -46,14 +46,8 @@
   font-size: var(--section-font-size);
 }
 
-.fact-content h2 {
-  font-size: var(--section-font-size-h2);
-  margin-bottom: calc(0.4 * var(--section-font-size-h2));
-}
-
 .fact-content ul { /* bullet points */
     text-align: left; /* keep left even when the rest is centered */
-    margin-left: var(--section-std-margin) /* bullet points encroach on margins otherwise */
 }
 
 @media (width < 450px) {

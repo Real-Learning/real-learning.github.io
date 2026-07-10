@@ -5,6 +5,7 @@
   /* Layout - common */
   --content-max-width: 1280px;
   --header-height: clamp(48px, min(5vw, 10vh), 64px);
+  --card-border-radius: 12px;
 
   /* Layout - Hero */
   --hero-font-size: clamp(1rem, 4vw, 1.5rem);
@@ -35,6 +36,8 @@
   --color-header-text: #ffffff;
   --color-hero-bg: #f6f5f1;
   --color-hero-text-bg: rgb(255 255 255 / 75%);
+  --color-success: #2e7d32;
+  --color-error: #c62828;
 
   /* Typography */
   --font-main: system-ui, -apple-system, sans-serif;
