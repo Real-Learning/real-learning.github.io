@@ -25,6 +25,9 @@
   --max-fact-offset: calc(0.1 * var(--content-max-width));
   --fact-offset: clamp(var(--min-fact-offset), calc(100vw - var(--content-max-width) + var(--max-fact-offset)), var(--max-fact-offset));
 
+  /* Layout - FAQ */
+  --faq-card-offset: calc(3 * var(--section-std-margin));
+
   /* Colors (WCAG AA Compliant contrast targets) */
   --color-bg: #ffffff;
   --color-bg-secondary: #f4f4f4;

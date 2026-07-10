@@ -1,0 +1,34 @@
+.faq-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-std-margin);
+}
+
+.question-card {
+  display: block;
+  background: var(--color-bg-secondary);
+  border-radius: var(--card-border-radius);
+  margin: 0;
+  width: 100%;
+}
+
+.question-card[open] {
+  padding-bottom: var(--section-std-margin);
+}
+
+.question-card summary {
+  padding: var(--section-std-margin);
+  padding-bottom: calc(var(--section-std-margin) + 0.1em); /* Text doesn't look centered otherwise */
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.question-card[open] summary {
+  padding-bottom: calc(0.5 * var(--section-std-margin));
+}
+
+/* everything but not summary */
+.question-card > *:not(summary) {
+  margin-left: var(--section-std-margin);
+  margin-right: var(--section-std-margin);
+}
