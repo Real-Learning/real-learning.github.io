@@ -28,6 +28,10 @@
   /* Layout - FAQ */
   --faq-card-offset: calc(3 * var(--section-std-margin));
 
+  /* Layout - About */
+  --staff-card-width: 400px;
+  --staff-pic-diameter: 160px;
+
   /* Colors (WCAG AA Compliant contrast targets) */
   --color-bg: #ffffff;
   --color-bg-secondary: #f4f4f4;
