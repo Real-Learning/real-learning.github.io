@@ -34,17 +34,14 @@
   display: block;
   opacity: 0;
   filter: blur(20px);
-  animation:
-    reveal-opacity 0.3s ease-in forwards,
-    reveal-blur 0.2s ease-out 0.3s forwards;
 }
 
-@keyframes reveal-opacity {
-  to { opacity: 1; }
-}
-
-@keyframes reveal-blur {
-  to { filter: blur(0); }
+.hero-image.loaded {
+  opacity: 1;
+  filter: blur(0);
+  transition:
+    opacity 0.3s ease-in,
+    filter 0.2s ease-out 0.3s;
 }
 
 @container (max-aspect-ratio: 16/7.5) { /* 16/7.5 is hero image aspect ratio - can't use vars here :( */
