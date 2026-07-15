@@ -8,6 +8,7 @@
         class="hero-image"
         fetchpriority="high"
         decoding="async"
+        onload="this.classList.add('loaded')"
       />
     </picture>
   </div>
@@ -26,4 +27,12 @@
       <a href="/#offers" class="hero-cta-btn button">Sign Up</a>
     </p>
   </div>
+  <noscript> <!-- just show the image without animations if JS is disabled -->
+    <style>
+      .hero-image {
+        opacity: 1 !important;
+        filter: blur(0) !important;
+      }
+    </style>
+  </noscript>
 </section>
