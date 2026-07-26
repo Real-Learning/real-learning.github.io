@@ -19,6 +19,7 @@ export default defineConfig({
         faq: resolve(__dirname, 'faq.html'),
         careers: resolve(__dirname, 'careers.html'),
         signup: resolve(__dirname, 'signup.html'),
+        free2months: resolve(__dirname, 'free2months.html'),
       },
     },
   },
