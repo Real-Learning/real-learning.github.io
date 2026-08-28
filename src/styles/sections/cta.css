@@ -3,6 +3,10 @@
   padding: calc(2 * var(--section-std-margin)) var(--section-std-margin) calc(2 * var(--section-std-margin)) var(--section-std-margin);
 }
 
+.cta-standalone {
+  max-width: 768px;
+}
+
 .cta-wrapper {
   padding: 0; /* we have 2 halves with their own padding */
   display: flex;
