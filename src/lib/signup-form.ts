@@ -2,6 +2,7 @@
  * Signup Form Logic
  */
 import { hide, reveal, setupPhoneInput, submitForm } from './form-utils.ts';
+import { trackFBEvent } from './events.ts';
 
 const signupForm = document.querySelector('#signup-form') as HTMLFormElement;
 const signupErrorMsg = document.querySelector('#signup-error-msg') as HTMLDivElement;
@@ -36,6 +37,7 @@ if (signupForm && nameInput && emailInput && phoneInput && submitBtn) {
       payload: { name, email, phone: normalizedPhone },
       onSuccess: () => {
         console.log('Success submitting signup:');
+        trackFBEvent('Lead', { form: 'signup' });
         hide(signupForm);
         if (signupSuccessMsg) {
           reveal(signupSuccessMsg);

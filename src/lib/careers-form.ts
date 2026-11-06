@@ -2,6 +2,7 @@
  * Careers Application Form Logic
  */
 import { hide, reveal, setupPhoneInput, submitForm } from './form-utils.ts';
+import { trackFBEvent } from './events.ts';
 
 const careersForm = document.querySelector('#careers-form') as HTMLFormElement;
 const careersErrorMsg = document.querySelector('#careers-error-msg') as HTMLDivElement;
@@ -46,6 +47,7 @@ if (careersForm && nameInput && emailInput && phoneInput && resumeInput && messa
       payload: { name, email, phone: normalizedPhone, resume_link, message },
       onSuccess: () => {
         console.log('Success submitting job_application:');
+        trackFBEvent('Candidate', {});
         hide(careersForm);
         reveal(careersSuccessMsg);
       },

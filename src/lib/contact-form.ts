@@ -2,6 +2,7 @@
  * Contact Form Logic
  */
 import { hide, reveal, setupPhoneInput, submitForm } from './form-utils.ts';
+import { trackFBEvent } from './events.ts';
 
 const contactDialog = document.querySelector('#contact-dialog') as HTMLDialogElement;
 const contactUsBtn = document.querySelector('#contact-us-btn') as HTMLButtonElement;
@@ -117,6 +118,7 @@ if (contactUsBtn && contactDialog && contactForm && nameInput && phoneInput && q
       payload: { name, phone: normalizedPhone, message: question },
       onSuccess: () => {
         console.log('Success submitting question:');
+        trackFBEvent('Lead', { form: 'question' });
         hide(contactForm);
         reveal(contactSuccessMsg);
         isSuccessState = true;
